@@ -57,4 +57,8 @@ To exit the environment
 
 `$ deactivate`
 
+Every time you want to open the application in browser, make sure you run:
 
+`$ source venv/Scripts/activate`
+
+`$ python manage.py runserver`
