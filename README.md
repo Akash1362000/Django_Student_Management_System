@@ -40,7 +40,9 @@ Create superuser for Admin Login
 Enter your desired username, email and password. Make sure you remember them as you'll need them in future.
 
 eg. Username: admin
+
     Email: admin@admin.com
+    
     Password: HighlyConfidentialPassword
 
 All Set!
