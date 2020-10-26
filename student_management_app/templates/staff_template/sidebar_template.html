@@ -1,0 +1,117 @@
+{% load static %}
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="{% url 'staff_home' %}" class="brand-link">
+      <img src="{% static "dist/img/AdminLTELogo.png" %}" alt="Dashboard" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">Dashboard</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{% static "dist/img/user2-160x160.jpg" %}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="{% url 'staff_profile' %}" class="d-block">{{ user.username }}</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            {% url 'staff_home' as staff_home %}
+            <a href="{{ staff_home }}" class="nav-link {% if request.path == staff_home %} active {% endif %}">
+              <i class="nav-icon fas fa-home"></i>
+              <p>
+                Home
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            {% url 'staff_take_attendance' as staff_take_attendance %}
+            <a href="{{ staff_take_attendance }}" class="nav-link {% if request.path == staff_take_attendance %} active {% endif %}">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Take Attendance
+              </p>
+            </a>
+          </li>
+           <li class="nav-item">
+            {% url 'staff_update_attendance' as staff_update_attendance %}
+            <a href="{{ staff_update_attendance }}" class="nav-link {% if request.path == staff_update_attendance %} active {% endif %}">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                View Update Attendance
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            {% url 'staff_apply_leave' as staff_apply_leave %}
+            <a href="{{ staff_apply_leave }}" class="nav-link {% if request.path == staff_apply_leave %} active {% endif %}">
+              <i class="nav-icon fas fa-pray"></i>
+              <p>
+                Apply Leave
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            {% url 'staff_feedback' as staff_feedback %}
+            <a href="{{ staff_feedback }}" class="nav-link {% if request.path == staff_feedback %} active {% endif %}">
+              <i class="nav-icon fas fa-comments"></i>
+              <p>
+                Feedback
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            {% url 'staff_add_result' as staff_add_result %}
+            <a href="{{ staff_add_result }}" class="nav-link {% if request.path == staff_add_result %} active {% endif %}">
+              <i class="nav-icon fas fa-plus-circle"></i>
+              <p>
+                Add Result
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            {% url 'edit_student_result' as edit_student_result %}
+            <a href="{{ edit_student_result }}" class="nav-link {% if request.path == edit_student_result %} active {% endif %}">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Edit Result
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            {% url 'start_live_classroom' as start_live_classroom %}
+            <a href="{{ start_live_classroom }}" class="nav-link {% if request.path == start_live_classroom %} active {% endif %}">
+              <i class="nav-icon fas fa-headset"></i>
+              <p>
+                Start Live Class Room
+              </p>
+            </a>
+          </li>
+
+           <li class="nav-item">
+            {% url 'staff_all_notification' as staff_all_notification %}
+            <a href="{{ staff_all_notification }}" class="nav-link {% if request.path == staff_all_notification %} active {% endif %}">
+              <i class="nav-icon fas fa-bell"></i>
+              <p>
+                Notifications
+              </p>
+            </a>
+          </li>
+
+
+
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
