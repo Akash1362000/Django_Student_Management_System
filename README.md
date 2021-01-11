@@ -1,6 +1,6 @@
 # Django Student Management System 👨‍🎓
 
-DBMS Mini Project 
+A modern Student Management System 👨‍🎓 with features like Interactive Dashboard 🤩 Attendance Management 🏫Provide Feedback ✍ Result Generation 📜 Leave Application 🍂
 
 ![SMS_Banner](https://akash1362000.github.io/styles/images/Django%20Student%20Management%20System%20Banner.jpg)
 
