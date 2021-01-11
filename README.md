@@ -7,6 +7,8 @@ A modern Student Management System 👨‍🎓 with features like Interactive Da
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://student-management-webapp.herokuapp.com/)
 [![travis-ci](https://api.travis-ci.com/Akash1362000/Django_Student_Management_System.svg?token=nv6BYq1BY3w4kf8uZuGj&branch=main)](https://travis-ci.com/github/Akash1362000/Django_Student_Management_System/)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FAkash1362000%2FDjango_Student_Management_System%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Akash1362000/Django_Student_Management_System/graphs/commit-activity)
+
 
 Checkout the live Website [here](https://student-management-webapp.herokuapp.com/)!
 
