@@ -1,11 +1,11 @@
-# Django_Student_Management_System
+# Django_Student_Management_System 👨‍🎓
 
 DBMS Mini Project for DYPCOE
 
-## Development
+## Development 👨‍💻
 Note : Make sure you have Python version 3.8+
 
-Environment Setup
+Environment Setup 🚀
 
 `$ git clone https://github.com/Akash1362000/Django_Student_Management_System.git`
 
@@ -23,17 +23,17 @@ Activate the environment everytime you open the project
 
 `$ source venv/Scripts/activate`
 
-Install requirements
+Install requirements 🛠
 
 `$ pip install -r requirements.txt`
 
-Run migrations for Database
+Run migrations for Database 
 
 `$ python manage.py makemigrations`
 
 `$ python manage.py migrate`
 
-Create superuser for Admin Login
+Create superuser for Admin Login 🔐
 
 `$ python manage.py createsuperuser`
 
@@ -47,13 +47,13 @@ eg.
     
     Password: HighlyConfidentialPassword
 
-All Set!
+All Set! 🤩
 
-Now you can run the server to see your application up & running
+Now you can run the server to see your application up & running 🚀
 
 `$ python manage.py runserver`
 
-To exit the environment
+To exit the environment ❎
 
 `$ deactivate`
 
