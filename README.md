@@ -1,6 +1,8 @@
-# Django_Student_Management_System 👨‍🎓
+# Django Student Management System 👨‍🎓
 
-DBMS Mini Project for DYPCOE
+![SMS_Banner](https://akash1362000.github.io/styles/images/Django%20Student%20Management%20System%20Banner.jpg)
+
+DBMS Mini Project 
 
 ## Development 👨‍💻
 Note : Make sure you have Python version 3.8+
