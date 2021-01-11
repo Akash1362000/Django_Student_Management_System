@@ -5,6 +5,7 @@ DBMS Mini Project
 ![SMS_Banner](https://akash1362000.github.io/styles/images/Django%20Student%20Management%20System%20Banner.jpg)
 
 Checkout the live Website [here](https://student-management-webapp.herokuapp.com/)!
+
 Find the detailed project report [here](https://drive.google.com/file/d/1DTqbRJBoFuCHJdtb0SJwdiLgE6iOgjUG/view?usp=sharing)! 📜
 
 ### Meet the Developers ✨🌟
