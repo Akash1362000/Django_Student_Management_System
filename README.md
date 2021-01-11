@@ -2,6 +2,9 @@
 
 A modern Student Management System 👨‍🎓 with features like Interactive Dashboard 🤩 Attendance Management 🏫Provide Feedback ✍ Result Generation 📜 Leave Application 🍂
 
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://student-management-webapp.herokuapp.com/)
+[![travis-ci](https://api.travis-ci.com/Akash1362000/Django_Student_Management_System.svg?token=nv6BYq1BY3w4kf8uZuGj&branch=main)](https://travis-ci.com/github/Akash1362000/Django_Student_Management_System/)
+
 ![SMS_Banner](https://akash1362000.github.io/styles/images/Django%20Student%20Management%20System%20Banner.jpg)
 
 Checkout the live Website [here](https://student-management-webapp.herokuapp.com/)!
