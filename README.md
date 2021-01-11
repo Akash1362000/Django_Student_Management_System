@@ -95,7 +95,7 @@ Every time you want to open the application in browser, make sure you run:
 ```
 MIT License
 
-Copyright (c) 2020 Akash1362000
+Copyright (c) 2020 Akash Shrivastava
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
