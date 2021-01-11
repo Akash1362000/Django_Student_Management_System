@@ -1,8 +1,21 @@
 # Django Student Management System 👨‍🎓
 
+DBMS Mini Project 
+
 ![SMS_Banner](https://akash1362000.github.io/styles/images/Django%20Student%20Management%20System%20Banner.jpg)
 
-DBMS Mini Project 
+Checkout the live Website [here](https://student-management-webapp.herokuapp.com/)!
+
+Meet the Developers ✨🌟
+
+<table>
+		<tr>
+			<td align="center"><img src="https://i.imgur.com/ZwcK1xV.jpg"  width=100px;"><br /><sub><b>Akash Shrivastava</b></sub><br/><a href="https://github.com/Akash1362000">👨‍💻🚴‍♂️📸</a></td>
+		   <td align="center"><img src="https://i.imgur.com/zvN556m.jpg"  width=100px;"><br /><sub><b>Akanksha Tamboli</b></sub><br/><a href="https://github.com/akankshast">💻🎨</a></td>
+			<td align="center"><img src="https://i.imgur.com/fVE1MSw.jpg"  width=100px;"><br /><sub><b>Shreejit Nair</b></sub><br/><a href="https://github.com/ShreejitNair">🎓🏏📱</a></td>			<td align="center"><img src="https://i.imgur.com/oKHebZM.jpg"  width=100px;"><br /><sub><b>Samiksha Naik</b></sub><br/><a href="https://github.com/samiksha8888989">💃📸</a></td>
+		</tr>
+		
+</table>
 
 ## Development 👨‍💻
 Note : Make sure you have Python version 3.8+
