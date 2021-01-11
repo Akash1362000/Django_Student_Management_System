@@ -82,4 +82,6 @@ Every time you want to open the application in browser, make sure you run:
 
 ![Dashboard](https://i.imgur.com/vN530l3.png)
 
+Find the detailed project report [here](https://drive.google.com/file/d/1DTqbRJBoFuCHJdtb0SJwdiLgE6iOgjUG/view?usp=sharing)! 📜
+
 
