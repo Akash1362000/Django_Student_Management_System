@@ -83,3 +83,5 @@ Every time you want to open the application in browser, make sure you run:
 ## A Glimpse of the Dashboard 😍
 
 ![Dashboard](https://i.imgur.com/vN530l3.png)
+
+Liked our work ? 🤔 Do star this repository ⭐ It'll motivate us more 😁
