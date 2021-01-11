@@ -6,7 +6,7 @@ DBMS Mini Project
 
 Checkout the live Website [here](https://student-management-webapp.herokuapp.com/)!
 
-Meet the Developers ✨🌟
+### Meet the Developers ✨🌟
 
 <table>
 		<tr>
