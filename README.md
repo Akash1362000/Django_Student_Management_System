@@ -116,4 +116,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 ```  
 
-Liked our work ? 🤔 Do star this repository ⭐ It'll motivate us more 😁
+Liked our work ? 🤔 Do star [this](https://github.com/Akash1362000/Django_Student_Management_System) repository ⭐ It'll motivate us more 😁
