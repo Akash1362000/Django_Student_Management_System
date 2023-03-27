@@ -11,20 +11,20 @@ from django.views.decorators.csrf import csrf_exempt
 
 from student_management_app.forms import AddStudentForm, EditStudentForm
 from student_management_app.models import (
-    CustomUser,
-    Staffs,
-    Courses,
-    Subjects,
-    Students,
-    SessionYearModel,
-    FeedBackStudent,
-    FeedBackStaffs,
-    LeaveReportStudent,
-    LeaveReportStaff,
     Attendance,
     AttendanceReport,
-    NotificationStudent,
+    Courses,
+    CustomUser,
+    FeedBackStaffs,
+    FeedBackStudent,
+    LeaveReportStaff,
+    LeaveReportStudent,
     NotificationStaffs,
+    NotificationStudent,
+    SessionYearModel,
+    Staffs,
+    Students,
+    Subjects,
 )
 
 

@@ -5,25 +5,25 @@ from uuid import uuid4
 from django.contrib import messages
 from django.core import serializers
 from django.forms import model_to_dict
-from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 
 from student_management_app.models import (
-    Subjects,
-    SessionYearModel,
-    Students,
     Attendance,
     AttendanceReport,
-    LeaveReportStaff,
-    Staffs,
-    FeedBackStaffs,
-    CustomUser,
     Courses,
+    CustomUser,
+    FeedBackStaffs,
+    LeaveReportStaff,
     NotificationStaffs,
-    StudentResult,
     OnlineClassRoom,
+    SessionYearModel,
+    Staffs,
+    StudentResult,
+    Students,
+    Subjects,
 )
 
 

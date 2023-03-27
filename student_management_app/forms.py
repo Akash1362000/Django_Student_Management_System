@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import ChoiceField
 
-from student_management_app.models import Courses, SessionYearModel, Subjects, Students
+from student_management_app.models import Courses, SessionYearModel, Students, Subjects
 
 
 class ChoiceNoValidation(ChoiceField):

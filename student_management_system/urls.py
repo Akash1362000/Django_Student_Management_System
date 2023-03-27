@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include, path
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
 
-from student_management_app import views, HodViews, StaffViews, StudentViews
+from student_management_app import HodViews, StaffViews, StudentViews, views
 from student_management_app.EditResultVIewClass import EditResultViewClass
 from student_management_system import settings
 

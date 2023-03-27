@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.views import View
 
 from student_management_app.forms import EditResultForm
-from student_management_app.models import Students, Subjects, StudentResult
+from student_management_app.models import StudentResult, Students, Subjects
 
 
 class EditResultViewClass(View):
