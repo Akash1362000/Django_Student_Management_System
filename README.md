@@ -34,6 +34,22 @@ Environment Setup 🚀
 
 `$ cd Django_Student_Management_System/`
 
+Create `.env` file (refer `.env.example` file)
+
+Generate `SECRET_KEY` from [here](https://djecrety.ir/)
+
+## Database Setup
+
+Install Postgres Latest version from [here](https://www.postgresql.org/download/)
+
+Install pgAdmin from [here](https://www.pgadmin.org/download/)
+
+Create a Database using pgAdmin by following the steps mentioned [here](https://www.tutorialsteacher.com/postgresql/create-database)
+
+Update your `DATABASE_URL` in `.env` with your DB details like `USER`, `PASSWORD` and `DB_NAME`
+
+---
+
 If virtualenv is not installed [(What is virtualenv?)](https://www.youtube.com/watch?v=N5vscPTWKOk&t=313s):
 
 `$ pip install virtualenv`
