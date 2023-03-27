@@ -1,10 +1,9 @@
-import datetime
 import json
-import os
 
 import requests
+from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import login, logout
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
@@ -12,7 +11,6 @@ from django.urls import reverse
 
 from student_management_app.EmailBackEnd import EmailBackEnd
 from student_management_app.models import Courses, CustomUser, SessionYearModel
-from student_management_system import settings
 
 
 def showDemoPage(request):
@@ -29,7 +27,7 @@ def doLogin(request):
     else:
         captcha_token = request.POST.get("g-recaptcha-response")
         cap_url = "https://www.google.com/recaptcha/api/siteverify"
-        cap_secret = "6LeWtqUZAAAAANlv3se4uw5WAg-p0X61CJjHPxKT"
+        cap_secret = settings.CAPTCHA_SECRET
         cap_data = {"secret": cap_secret, "response": captcha_token}
         cap_server_response = requests.post(url=cap_url, data=cap_data)
         cap_json = json.loads(cap_server_response.text)

@@ -2,7 +2,6 @@ import json
 
 import requests
 from django.contrib import messages
-from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render

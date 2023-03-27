@@ -3,8 +3,6 @@ from datetime import datetime
 from uuid import uuid4
 
 from django.contrib import messages
-from django.core import serializers
-from django.forms import model_to_dict
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.urls import reverse
