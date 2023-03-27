@@ -10,7 +10,7 @@ A modern Student Management System 👨‍🎓 with features like Interactive Da
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Akash1362000/Django_Student_Management_System/graphs/commit-activity)
 
 
-Checkout the live Website [here](https://student-management-webapp.herokuapp.com/)!
+Checkout the live Website [here](https://student-management-system-4jym.onrender.com/)!
 
 Find the detailed project report [here](https://drive.google.com/file/d/1DTqbRJBoFuCHJdtb0SJwdiLgE6iOgjUG/view?usp=sharing)! 📜
 
@@ -37,6 +37,10 @@ Environment Setup 🚀
 Create `.env` file (refer `.env.example` file)
 
 Generate `SECRET_KEY` from [here](https://djecrety.ir/)
+
+Generate your `CAPTCHA_SECRET` from [here](http://www.google.com/recaptcha/admin)
+
+Copy your `SITE KEY` after generating `CAPTCHA_SECRET` and paste it in `data-sitekey` in `student_management_app/templates/login_page.html` (replace the current key with your key)
 
 ## Database Setup
 
