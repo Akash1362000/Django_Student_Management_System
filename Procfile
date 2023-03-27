@@ -1,1 +1,1 @@
-web: gunicorn 'student_management_system.wsgi'
+web: python manage.py migrate && gunicorn 'student_management_system.wsgi'
