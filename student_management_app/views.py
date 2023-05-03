@@ -101,10 +101,6 @@ def showFirebaseJS(request):
     return HttpResponse(data, content_type="text/javascript")
 
 
-def Testurl(request):
-    return HttpResponse("Ok")
-
-
 def signup_admin(request):
     return render(request, "signup_admin_page.html")
 

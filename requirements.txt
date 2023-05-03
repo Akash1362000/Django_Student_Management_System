@@ -5,3 +5,5 @@ requests==2.23.0
 psycopg2-binary==2.9.5
 python-dotenv==1.0.0
 whitenoise==6.4.0
+psutil==5.9.5
+django-health-check==3.17.0

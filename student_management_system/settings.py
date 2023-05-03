@@ -51,6 +51,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "student_management_app",
+    "health_check",
+    "health_check.db",
+    "health_check.cache",
+    "health_check.storage",
+    "health_check.contrib.migrations",
+    "health_check.contrib.psutil",
 ]
 
 MIDDLEWARE = [
@@ -150,3 +156,4 @@ EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_mails")
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 CAPTCHA_SECRET = os.getenv("CAPTCHA_SECRET", default="")
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

@@ -31,6 +31,7 @@ urlpatterns = (
         path("do_staff_signup", views.do_staff_signup, name="do_staff_signup"),
         path("do_signup_student", views.do_signup_student, name="do_signup_student"),
         path("admin/", admin.site.urls),
+        path("health-check/", include("health_check.urls")),
         path("accounts/", include("django.contrib.auth.urls")),
         path("", views.ShowLoginPage, name="show_login"),
         path("get_user_details", views.GetUserDetails),
@@ -302,7 +303,6 @@ urlpatterns = (
             StaffViews.returnHtmlWidget,
             name="returnHtmlWidget",
         ),
-        path("testurl/", views.Testurl),
     ]
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
