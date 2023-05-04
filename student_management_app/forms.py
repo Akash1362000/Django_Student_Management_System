@@ -173,7 +173,7 @@ class EditStudentForm(forms.Form):
 class EditResultForm(forms.Form):
     def __init__(self, *args, **kwargs):
         self.staff_id = kwargs.pop("staff_id")
-        super(EditResultForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         subject_list = []
         try:
             subjects = Subjects.objects.filter(staff_id=self.staff_id)

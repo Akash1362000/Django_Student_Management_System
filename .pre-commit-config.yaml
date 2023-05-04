@@ -1,0 +1,22 @@
+exclude: 'static'
+repos:
+- repo: https://github.com/pycqa/isort
+  rev: 5.12.0
+  hooks:
+    - id: isort
+      name: isort-py
+- repo: https://github.com/ambv/black
+  rev: 23.3.0
+  hooks:
+    - id: black
+      name: black-py
+- repo: https://github.com/asottile/pyupgrade
+  rev: v3.3.2
+  hooks:
+  -   id: pyupgrade
+      name: pyupgrade-py
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v2.3.0
+  hooks:
+  -   id: end-of-file-fixer
+  -   id: trailing-whitespace

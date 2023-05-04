@@ -22,7 +22,7 @@ Find the detailed project report [here](https://drive.google.com/file/d/1DTqbRJB
 		   <td align="center"><img src="https://i.imgur.com/zvN556m.jpg"  width=100px;"><br /><sub><b>Akanksha Tamboli</b></sub><br/><a href="https://github.com/akankshast">💻🎨</a></td>
 			<td align="center"><img src="https://i.imgur.com/fVE1MSw.jpg"  width=100px;"><br /><sub><b>Shreejit Nair</b></sub><br/><a href="https://github.com/ShreejitNair">🎓🏏📱</a></td>			<td align="center"><img src="https://i.imgur.com/oKHebZM.jpg"  width=100px;"><br /><sub><b>Samiksha Naik</b></sub><br/><a href="https://github.com/samiksha8888989">💃📸</a></td>
 		</tr>
-		
+
 </table>
 
 ## Development 👨‍💻
@@ -70,7 +70,7 @@ Install requirements 🛠
 
 `$ pip install -r requirements.txt`
 
-Run migrations for Database 
+Run migrations for Database
 
 `$ python manage.py makemigrations`
 
@@ -85,9 +85,9 @@ Enter your desired username, email and password. Make sure you remember them as 
 eg.
 
     Username: admin
-    
+
     Email: admin@admin.com
-    
+
     Password: HighlyConfidentialPassword
 
 All Set! 🤩
@@ -133,7 +133,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE. 
-```  
+SOFTWARE.
+```
 
 Liked our work ? 🤔 Do star [this](https://github.com/Akash1362000/Django_Student_Management_System) repository ⭐ It'll motivate us more 😁
