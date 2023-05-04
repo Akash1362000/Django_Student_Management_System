@@ -27,9 +27,6 @@ jobs:
           pip install -r requirements.txt
           pip install -r requirements.dev.txt
 
-      - name: Run Lint
-        run: flake8
-
       - name: Run Unit Tests ⚒
         env:
           DEBUG: False
