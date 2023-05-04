@@ -17,7 +17,9 @@ class AddStudentForm(forms.Form):
     email = forms.EmailField(
         label="Email",
         max_length=50,
-        widget=forms.EmailInput(attrs={"class": "form-control", "autocomplete": "off"}),
+        widget=forms.EmailInput(
+            attrs={"class": "form-control", "autocomplete": "off"},
+        ),
     )
     password = forms.CharField(
         label="Password",
@@ -37,7 +39,9 @@ class AddStudentForm(forms.Form):
     username = forms.CharField(
         label="Username",
         max_length=50,
-        widget=forms.TextInput(attrs={"class": "form-control", "autocomplete": "off"}),
+        widget=forms.TextInput(
+            attrs={"class": "form-control", "autocomplete": "off"},
+        ),
     )
     address = forms.CharField(
         label="Address",
@@ -50,7 +54,7 @@ class AddStudentForm(forms.Form):
         for course in courses:
             small_course = (course.id, course.course_name)
             course_list.append(small_course)
-    except:
+    except Exception:
         course_list = []
     # course_list=[]
 
@@ -64,7 +68,7 @@ class AddStudentForm(forms.Form):
                 str(ses.session_start_year) + "   TO  " + str(ses.session_end_year),
             )
             session_list.append(small_ses)
-    except:
+    except Exception:
         session_list = []
 
     gender_choice = (("Male", "Male"), ("Female", "Female"))
@@ -124,7 +128,7 @@ class EditStudentForm(forms.Form):
         for course in courses:
             small_course = (course.id, course.course_name)
             course_list.append(small_course)
-    except:
+    except Exception:
         course_list = []
 
     session_list = []
@@ -137,7 +141,7 @@ class EditStudentForm(forms.Form):
                 str(ses.session_start_year) + "   TO  " + str(ses.session_end_year),
             )
             session_list.append(small_ses)
-    except:
+    except Exception:
         pass
         # session_list = []
 
@@ -176,7 +180,7 @@ class EditResultForm(forms.Form):
             for subject in subjects:
                 subject_single = (subject.id, subject.subject_name)
                 subject_list.append(subject_single)
-        except:
+        except Exception:
             subject_list = []
         self.fields["subject_id"].choices = subject_list
 
@@ -191,7 +195,7 @@ class EditResultForm(forms.Form):
                 + str(session.session_end_year),
             )
             session_list.append(session_single)
-    except:
+    except Exception:
         session_list = []
 
     subject_id = forms.ChoiceField(
@@ -210,5 +214,8 @@ class EditResultForm(forms.Form):
         widget=forms.TextInput(attrs={"class": "form-control"}),
     )
     exam_marks = forms.CharField(
-        label="Exam Marks", widget=forms.TextInput(attrs={"class": "form-control"})
+        label="Exam Marks",
+        widget=forms.TextInput(
+            attrs={"class": "form-control"},
+        ),
     )

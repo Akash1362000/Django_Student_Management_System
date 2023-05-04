@@ -14,7 +14,11 @@ class SessionYearModel(models.Model):
 
 class CustomUser(AbstractUser):
     user_type_data = ((1, "HOD"), (2, "Staff"), (3, "Student"))
-    user_type = models.CharField(default=1, choices=user_type_data, max_length=10)
+    user_type = models.CharField(
+        default=1,
+        choices=user_type_data,
+        max_length=10,
+    )
 
 
 class AdminHOD(models.Model):
@@ -60,7 +64,10 @@ class Students(models.Model):
     profile_pic = models.FileField()
     address = models.TextField()
     course_id = models.ForeignKey(Courses, on_delete=models.DO_NOTHING)
-    session_year_id = models.ForeignKey(SessionYearModel, on_delete=models.CASCADE)
+    session_year_id = models.ForeignKey(
+        SessionYearModel,
+        on_delete=models.CASCADE,
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
     fcm_token = models.TextField(default="")
@@ -72,7 +79,10 @@ class Attendance(models.Model):
     subject_id = models.ForeignKey(Subjects, on_delete=models.DO_NOTHING)
     attendance_date = models.DateField()
     created_at = models.DateTimeField(auto_now_add=True)
-    session_year_id = models.ForeignKey(SessionYearModel, on_delete=models.CASCADE)
+    session_year_id = models.ForeignKey(
+        SessionYearModel,
+        on_delete=models.CASCADE,
+    )
     updated_at = models.DateTimeField(auto_now_add=True)
     objects = models.Manager()
 
@@ -163,7 +173,10 @@ class OnlineClassRoom(models.Model):
     room_name = models.CharField(max_length=255)
     room_pwd = models.CharField(max_length=255)
     subject = models.ForeignKey(Subjects, on_delete=models.CASCADE)
-    session_years = models.ForeignKey(SessionYearModel, on_delete=models.CASCADE)
+    session_years = models.ForeignKey(
+        SessionYearModel,
+        on_delete=models.CASCADE,
+    )
     started_by = models.ForeignKey(Staffs, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)

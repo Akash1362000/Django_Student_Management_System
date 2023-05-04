@@ -32,7 +32,7 @@ def doLogin(request):
         cap_server_response = requests.post(url=cap_url, data=cap_data)
         cap_json = json.loads(cap_server_response.text)
 
-        if cap_json["success"] == False:
+        if cap_json["success"] is False:
             messages.error(request, "Invalid Captcha Try Again")
             return HttpResponseRedirect("/")
 
@@ -41,7 +41,7 @@ def doLogin(request):
             username=request.POST.get("email"),
             password=request.POST.get("password"),
         )
-        if user != None:
+        if user is not None:
             login(request, user)
             if user.user_type == "1":
                 return HttpResponseRedirect("/admin_home")
@@ -55,7 +55,7 @@ def doLogin(request):
 
 
 def GetUserDetails(request):
-    if request.user != None:
+    if request.user is not None:
         return HttpResponse(
             "User : "
             + request.user.email
@@ -131,7 +131,7 @@ def do_admin_signup(request):
         user.save()
         messages.success(request, "Successfully Created Admin")
         return HttpResponseRedirect(reverse("show_login"))
-    except:
+    except Exception:
         messages.error(request, "Failed to Create Admin")
         return HttpResponseRedirect(reverse("show_login"))
 
@@ -150,7 +150,7 @@ def do_staff_signup(request):
         user.save()
         messages.success(request, "Successfully Created Staff")
         return HttpResponseRedirect(reverse("show_login"))
-    except:
+    except Exception:
         messages.error(request, "Failed to Create Staff")
         return HttpResponseRedirect(reverse("show_login"))
 

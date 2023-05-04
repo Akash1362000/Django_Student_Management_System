@@ -59,7 +59,9 @@ def admin_home(request):
     staff_name_list = []
     for staff in staffs:
         subject_ids = Subjects.objects.filter(staff_id=staff.admin.id)
-        attendance = Attendance.objects.filter(subject_id__in=subject_ids).count()
+        attendance = Attendance.objects.filter(
+            subject_id__in=subject_ids,
+        ).count()
         leaves = LeaveReportStaff.objects.filter(
             staff_id=staff.id, leave_status=1
         ).count()
@@ -135,7 +137,7 @@ def add_staff_save(request):
             user.save()
             messages.success(request, "Successfully Added Staff")
             return HttpResponseRedirect(reverse("add_staff"))
-        except:
+        except Exception:
             messages.error(request, "Failed to Add Staff")
             return HttpResponseRedirect(reverse("add_staff"))
 
@@ -162,7 +164,11 @@ def add_course_save(request):
 
 def add_student(request):
     form = AddStudentForm()
-    return render(request, "hod_template/add_student_template.html", {"form": form})
+    return render(
+        request,
+        "hod_template/add_student_template.html",
+        {"form": form},
+    )
 
 
 def add_student_save(request):
@@ -205,13 +211,15 @@ def add_student_save(request):
                 user.save()
                 messages.success(request, "Successfully Added Student")
                 return HttpResponseRedirect(reverse("add_student"))
-            except:
+            except Exception:
                 messages.error(request, "Failed to Add Student")
                 return HttpResponseRedirect(reverse("add_student"))
         else:
             form = AddStudentForm(request.POST)
             return render(
-                request, "hod_template/add_student_template.html", {"form": form}
+                request,
+                "hod_template/add_student_template.html",
+                {"form": form},
             )
 
 
@@ -242,7 +250,7 @@ def add_subject_save(request):
             subject.save()
             messages.success(request, "Successfully Added Subject")
             return HttpResponseRedirect(reverse("add_subject"))
-        except:
+        except Exception:
             messages.error(request, "Failed to Add Subject")
             return HttpResponseRedirect(reverse("add_subject"))
 
@@ -257,21 +265,27 @@ def manage_staff(request):
 def manage_student(request):
     students = Students.objects.all()
     return render(
-        request, "hod_template/manage_student_template.html", {"students": students}
+        request,
+        "hod_template/manage_student_template.html",
+        {"students": students},
     )
 
 
 def manage_course(request):
     courses = Courses.objects.all()
     return render(
-        request, "hod_template/manage_course_template.html", {"courses": courses}
+        request,
+        "hod_template/manage_course_template.html",
+        {"courses": courses},
     )
 
 
 def manage_subject(request):
     subjects = Subjects.objects.all()
     return render(
-        request, "hod_template/manage_subject_template.html", {"subjects": subjects}
+        request,
+        "hod_template/manage_subject_template.html",
+        {"subjects": subjects},
     )
 
 
@@ -310,7 +324,7 @@ def edit_staff_save(request):
             return HttpResponseRedirect(
                 reverse("edit_staff", kwargs={"staff_id": staff_id})
             )
-        except:
+        except Exception:
             messages.error(request, "Failed to Edit Staff")
             return HttpResponseRedirect(
                 reverse("edit_staff", kwargs={"staff_id": staff_id})
@@ -341,7 +355,7 @@ def edit_student_save(request):
         return HttpResponse("<h2>Method Not Allowed</h2>")
     else:
         student_id = request.session.get("student_id")
-        if student_id == None:
+        if student_id is None:
             return HttpResponseRedirect(reverse("manage_student"))
 
         form = EditStudentForm(request.POST, request.FILES)
@@ -378,7 +392,7 @@ def edit_student_save(request):
                 student.gender = sex
                 course = Courses.objects.get(id=course_id)
                 student.course_id = course
-                if profile_pic_url != None:
+                if profile_pic_url is not None:
                     student.profile_pic = profile_pic_url
                 student.save()
                 del request.session["student_id"]
@@ -386,7 +400,7 @@ def edit_student_save(request):
                 return HttpResponseRedirect(
                     reverse("edit_student", kwargs={"student_id": student_id})
                 )
-            except:
+            except Exception:
                 messages.error(request, "Failed to Edit Student")
                 return HttpResponseRedirect(
                     reverse("edit_student", kwargs={"student_id": student_id})
@@ -397,7 +411,11 @@ def edit_student_save(request):
             return render(
                 request,
                 "hod_template/edit_student_template.html",
-                {"form": form, "id": student_id, "username": student.admin.username},
+                {
+                    "form": form,
+                    "id": student_id,
+                    "username": student.admin.username,
+                },
             )
 
 
@@ -408,7 +426,12 @@ def edit_subject(request, subject_id):
     return render(
         request,
         "hod_template/edit_subject_template.html",
-        {"subject": subject, "staffs": staffs, "courses": courses, "id": subject_id},
+        {
+            "subject": subject,
+            "staffs": staffs,
+            "courses": courses,
+            "id": subject_id,
+        },
     )
 
 
@@ -434,7 +457,7 @@ def edit_subject_save(request):
             return HttpResponseRedirect(
                 reverse("edit_subject", kwargs={"subject_id": subject_id})
             )
-        except:
+        except Exception:
             messages.error(request, "Failed to Edit Subject")
             return HttpResponseRedirect(
                 reverse("edit_subject", kwargs={"subject_id": subject_id})
@@ -466,7 +489,7 @@ def edit_course_save(request):
             return HttpResponseRedirect(
                 reverse("edit_course", kwargs={"course_id": course_id})
             )
-        except:
+        except Exception:
             messages.error(request, "Failed to Edit Course")
             return HttpResponseRedirect(
                 reverse("edit_course", kwargs={"course_id": course_id})
@@ -486,12 +509,13 @@ def add_session_save(request):
 
         try:
             sessionyear = SessionYearModel(
-                session_start_year=session_start_year, session_end_year=session_end_year
+                session_start_year=session_start_year,
+                session_end_year=session_end_year,
             )
             sessionyear.save()
             messages.success(request, "Successfully Added Session")
             return HttpResponseRedirect(reverse("manage_session"))
-        except:
+        except Exception:
             messages.error(request, "Failed to Add Session")
             return HttpResponseRedirect(reverse("manage_session"))
 
@@ -519,14 +543,18 @@ def check_username_exist(request):
 def staff_feedback_message(request):
     feedbacks = FeedBackStaffs.objects.all()
     return render(
-        request, "hod_template/staff_feedback_template.html", {"feedbacks": feedbacks}
+        request,
+        "hod_template/staff_feedback_template.html",
+        {"feedbacks": feedbacks},
     )
 
 
 def student_feedback_message(request):
     feedbacks = FeedBackStudent.objects.all()
     return render(
-        request, "hod_template/student_feedback_template.html", {"feedbacks": feedbacks}
+        request,
+        "hod_template/student_feedback_template.html",
+        {"feedbacks": feedbacks},
     )
 
 
@@ -540,7 +568,7 @@ def student_feedback_message_replied(request):
         feedback.feedback_reply = feedback_message
         feedback.save()
         return HttpResponse("True")
-    except:
+    except Exception:
         return HttpResponse("False")
 
 
@@ -554,18 +582,26 @@ def staff_feedback_message_replied(request):
         feedback.feedback_reply = feedback_message
         feedback.save()
         return HttpResponse("True")
-    except:
+    except Exception:
         return HttpResponse("False")
 
 
 def staff_leave_view(request):
     leaves = LeaveReportStaff.objects.all()
-    return render(request, "hod_template/staff_leave_view.html", {"leaves": leaves})
+    return render(
+        request,
+        "hod_template/staff_leave_view.html",
+        {"leaves": leaves},
+    )
 
 
 def student_leave_view(request):
     leaves = LeaveReportStudent.objects.all()
-    return render(request, "hod_template/student_leave_view.html", {"leaves": leaves})
+    return render(
+        request,
+        "hod_template/student_leave_view.html",
+        {"leaves": leaves},
+    )
 
 
 def student_approve_leave(request, leave_id):
@@ -651,7 +687,11 @@ def admin_get_attendance_student(request):
 
 def admin_profile(request):
     user = CustomUser.objects.get(id=request.user.id)
-    return render(request, "hod_template/admin_profile.html", {"user": user})
+    return render(
+        request,
+        "hod_template/admin_profile.html",
+        {"user": user},
+    )
 
 
 def admin_profile_save(request):
@@ -660,7 +700,7 @@ def admin_profile_save(request):
     else:
         first_name = request.POST.get("first_name")
         last_name = request.POST.get("last_name")
-        password = request.POST.get("password")
+        # password = request.POST.get("password")
         try:
             customuser = CustomUser.objects.get(id=request.user.id)
             customuser.first_name = first_name
@@ -670,7 +710,7 @@ def admin_profile_save(request):
             customuser.save()
             messages.success(request, "Successfully Updated Profile")
             return HttpResponseRedirect(reverse("admin_profile"))
-        except:
+        except Exception:
             messages.error(request, "Failed to Update Profile")
             return HttpResponseRedirect(reverse("admin_profile"))
 
@@ -678,13 +718,19 @@ def admin_profile_save(request):
 def admin_send_notification_student(request):
     students = Students.objects.all()
     return render(
-        request, "hod_template/student_notification.html", {"students": students}
+        request,
+        "hod_template/student_notification.html",
+        {"students": students},
     )
 
 
 def admin_send_notification_staff(request):
     staffs = Staffs.objects.all()
-    return render(request, "hod_template/staff_notification.html", {"staffs": staffs})
+    return render(
+        request,
+        "hod_template/staff_notification.html",
+        {"staffs": staffs},
+    )
 
 
 @csrf_exempt

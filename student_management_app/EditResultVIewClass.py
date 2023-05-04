@@ -40,5 +40,7 @@ class EditResultViewClass(View):
             messages.error(request, "Failed to Update Result")
             form = EditResultForm(request.POST, staff_id=request.user.id)
             return render(
-                request, "staff_template/edit_student_result.html", {"form": form}
+                request,
+                "staff_template/edit_student_result.html",
+                {"form": form},
             )

@@ -39,10 +39,14 @@ def staff_home(request):
         if course_id not in final_course:
             final_course.append(course_id)
 
-    students_count = Students.objects.filter(course_id__in=final_course).count()
+    students_count = Students.objects.filter(
+        course_id__in=final_course,
+    ).count()
 
     # Fetch All Attendance Count
-    attendance_count = Attendance.objects.filter(subject_id__in=subjects).count()
+    attendance_count = Attendance.objects.filter(
+        subject_id__in=subjects,
+    ).count()
 
     # Fetch All Approve Leave
     staff = Staffs.objects.get(admin=request.user.id)
@@ -55,7 +59,9 @@ def staff_home(request):
     subject_list = []
     attendance_list = []
     for subject in subjects:
-        attendance_count1 = Attendance.objects.filter(subject_id=subject.id).count()
+        attendance_count1 = Attendance.objects.filter(
+            subject_id=subject.id,
+        ).count()
         subject_list.append(subject.subject_name)
         attendance_list.append(attendance_count1)
 
@@ -147,11 +153,13 @@ def save_attendance_data(request):
         for stud in json_sstudent:
             student = Students.objects.get(admin=stud["id"])
             attendance_report = AttendanceReport(
-                student_id=student, attendance_id=attendance, status=stud["status"]
+                student_id=student,
+                attendance_id=attendance,
+                status=stud["status"],
             )
             attendance_report.save()
         return HttpResponse("OK")
-    except:
+    except Exception:
         return HttpResponse("ERR")
 
 
@@ -225,7 +233,7 @@ def save_updateattendance_data(request):
             attendance_report.status = stud["status"]
             attendance_report.save()
         return HttpResponse("OK")
-    except:
+    except Exception:
         return HttpResponse("ERR")
 
 
@@ -233,7 +241,9 @@ def staff_apply_leave(request):
     staff_obj = Staffs.objects.get(admin=request.user.id)
     leave_data = LeaveReportStaff.objects.filter(staff_id=staff_obj)
     return render(
-        request, "staff_template/staff_apply_leave.html", {"leave_data": leave_data}
+        request,
+        "staff_template/staff_apply_leave.html",
+        {"leave_data": leave_data},
     )
 
 
@@ -255,7 +265,7 @@ def staff_apply_leave_save(request):
             leave_report.save()
             messages.success(request, "Successfully Applied for Leave")
             return HttpResponseRedirect(reverse("staff_apply_leave"))
-        except:
+        except Exception:
             messages.error(request, "Failed To Apply for Leave")
             return HttpResponseRedirect(reverse("staff_apply_leave"))
 
@@ -264,7 +274,9 @@ def staff_feedback(request):
     staff_id = Staffs.objects.get(admin=request.user.id)
     feedback_data = FeedBackStaffs.objects.filter(staff_id=staff_id)
     return render(
-        request, "staff_template/staff_feedback.html", {"feedback_data": feedback_data}
+        request,
+        "staff_template/staff_feedback.html",
+        {"feedback_data": feedback_data},
     )
 
 
@@ -282,7 +294,7 @@ def staff_feedback_save(request):
             feedback.save()
             messages.success(request, "Successfully Sent Feedback")
             return HttpResponseRedirect(reverse("staff_feedback"))
-        except:
+        except Exception:
             messages.error(request, "Failed To Send Feedback")
             return HttpResponseRedirect(reverse("staff_feedback"))
 
@@ -291,7 +303,9 @@ def staff_profile(request):
     user = CustomUser.objects.get(id=request.user.id)
     staff = Staffs.objects.get(admin=user)
     return render(
-        request, "staff_template/staff_profile.html", {"user": user, "staff": staff}
+        request,
+        "staff_template/staff_profile.html",
+        {"user": user, "staff": staff},
     )
 
 
@@ -307,7 +321,7 @@ def staff_profile_save(request):
             customuser = CustomUser.objects.get(id=request.user.id)
             customuser.first_name = first_name
             customuser.last_name = last_name
-            if password != None and password != "":
+            if password is not None and password != "":
                 customuser.set_password(password)
             customuser.save()
 
@@ -316,7 +330,7 @@ def staff_profile_save(request):
             staff.save()
             messages.success(request, "Successfully Updated Profile")
             return HttpResponseRedirect(reverse("staff_profile"))
-        except:
+        except Exception:
             messages.error(request, "Failed to Update Profile")
             return HttpResponseRedirect(reverse("staff_profile"))
 
@@ -329,7 +343,7 @@ def staff_fcmtoken_save(request):
         staff.fcm_token = token
         staff.save()
         return HttpResponse("True")
-    except:
+    except Exception:
         return HttpResponse("False")
 
 
@@ -387,7 +401,7 @@ def save_student_result(request):
             result.save()
             messages.success(request, "Successfully Added Result")
             return HttpResponseRedirect(reverse("staff_add_result"))
-    except:
+    except Exception:
         messages.error(request, "Failed to Add Result")
         return HttpResponseRedirect(reverse("staff_add_result"))
 
