@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    volumes:
+      - .:/student_management_system
+    ports:
+      - 8000:8000
+    image: student_management_system:django
+    container_name: student_management_system
+    command:
+      - /bin/bash
+      - -c
+      - |
+        python3 ./manage.py migrate
+        python3 ./manage.py collectstatic --noinput
+        python3 ./manage.py runserver 0.0.0.0:8000
+    environment:
+      - DEBUG=True
+      - SECRET_KEY=0l5agg-yx+4+&^ti&p*nm&^=s2l8awa8o4=%+9@98$*(vv9bo4
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
+      - CAPTCHA_SECRET=6Ldx190ZAAAAADQJyIw11VkgH4HTuxMWmcFc3rC5
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - 5440:5432
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    container_name: student_management_system_db
