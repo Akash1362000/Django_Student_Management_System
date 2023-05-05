@@ -19,7 +19,7 @@ services:
       - DEBUG=True
       - SECRET_KEY=0l5agg-yx+4+&^ti&p*nm&^=s2l8awa8o4=%+9@98$*(vv9bo4
       - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
-      - CAPTCHA_SECRET=6Ldx190ZAAAAADQJyIw11VkgH4HTuxMWmcFc3rC5
+      - CAPTCHA_SECRET=your_captcha_secret
     depends_on:
       - db
 
