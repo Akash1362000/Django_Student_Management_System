@@ -128,6 +128,14 @@ If you want to use Docker to run this project, you need to do the following step
 
 ![Dashboard](https://i.imgur.com/vN530l3.png)
 
+## Stargazers
+
+[![Stargazers](https://reporoster.com/stars/Akash1362000/Django_Student_Management_System)](https://github.com/Akash1362000/Django_Student_Management_System/stargazers)
+
+Liked our work? 🤔 Do star [this](https://github.com/Akash1362000/Django_Student_Management_System) repository ⭐ It'll motivate us more 😁
+
+---
+
 ### License ✍
 
 ```
@@ -153,5 +161,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
-Liked our work ? 🤔 Do star [this](https://github.com/Akash1362000/Django_Student_Management_System) repository ⭐ It'll motivate us more 😁
