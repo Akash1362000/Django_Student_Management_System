@@ -71,14 +71,14 @@
   "devDependencies": {
     "grunt": "1.6.1",
     "grunt-bump": "0.7.0",
-    "grunt-cli": "0.1.13",
+    "grunt-cli": "1.4.3",
     "grunt-contrib-clean": "0.6.0",
     "grunt-contrib-concat": "0.5.1",
     "grunt-contrib-copy": "0.8.2",
-    "grunt-contrib-uglify": "0.11.0",
+    "grunt-contrib-uglify": "0.11.1",
     "grunt-contrib-watch": "1.1.0",
     "grunt-jsbeautifier": "0.2.10",
-    "grunt-replace": "0.11.0",
+    "grunt-replace": "2.0.2",
     "load-grunt-tasks": "3.4.0"
   }
 }
